@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AdventOfCode.Years;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -9,7 +10,7 @@ namespace AdventOfCode
     {
         private static ILogger<Program> _logger;
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var hostBuilder = Host.CreateDefaultBuilder(args);
             hostBuilder
@@ -17,8 +18,9 @@ namespace AdventOfCode
                 .ConfigureServices(DiContainer.Configure);
             var host = hostBuilder.Build();
 
-            _logger = host.Services.GetService<ILogger<Program>>();
-            _logger.LogInformation("Hello, world!");
+            var solver = host.Services.GetService<PuzzleSolver>();
+            await solver.SolveFirstPartAsync();
+            await solver.SolveSecondPartAsync();
 
             host.Run();
         }
