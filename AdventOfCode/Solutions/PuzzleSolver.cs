@@ -34,6 +34,13 @@ internal class PuzzleSolver
     {
         _logger.LogInformation("Solving part {0} of the puzzle", partNumber);
 
+        var methodInfo = getAnswer.Method;
+        if (methodInfo.GetCustomAttributes(typeof(NotImplementedAttribute), false).Length > 0)
+        {
+            _logger.LogInformation("Part {0} not yet implemented", partNumber);
+            return;
+        }
+
         if (testCases.Any(testCase => !string.IsNullOrEmpty(testCase.TestData)))
         {
             _logger.LogInformation("Running test cases");

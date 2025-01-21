@@ -6,6 +6,7 @@ internal class Year2015Day3Solution : IDaySolution
         return string.Empty;
     }
 
+    [NotImplemented]
     public string GetSecondPartAnswer(string inputData)
     {
         return string.Empty;
