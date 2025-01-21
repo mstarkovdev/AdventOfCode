@@ -41,7 +41,7 @@ internal class PuzzleSolver
             return;
         }
 
-        if (testCases.Any(testCase => !string.IsNullOrEmpty(testCase.TestData)))
+        if (testCases != null && testCases.Any(testCase => !string.IsNullOrEmpty(testCase.TestData)))
         {
             _logger.LogInformation("Running test cases");
 

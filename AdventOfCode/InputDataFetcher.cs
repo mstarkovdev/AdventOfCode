@@ -47,7 +47,7 @@ internal class InputDataFetcher
     {
         var url = string.Format(INPUT_DATA_URL, year, day);
 
-        _logger.LogDebug("Fetching input data from URL: {0}", url);
+        _logger.LogInformation("Fetching input data from URL: {0}", url);
 
         using (var httpClient = new HttpClient())
         {
@@ -59,9 +59,9 @@ internal class InputDataFetcher
                 response.EnsureSuccessStatusCode();
 
                 var inputData = await response.Content.ReadAsStringAsync();
-                _logger.LogDebug("Input data fetched successfully");
+                _logger.LogInformation("Input data fetched successfully");
 
-                File.WriteAllText(pathToYearDayInputDataFile, inputData);
+                File.WriteAllText(pathToYearDayInputDataFile, inputData.Trim());
 
                 return inputData;
             }
