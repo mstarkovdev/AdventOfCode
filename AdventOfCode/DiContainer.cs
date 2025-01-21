@@ -1,6 +1,5 @@
-﻿using AdventOfCode._2015;
-using AdventOfCode.Configuration;
-using AdventOfCode.Years;
+﻿using AdventOfCode.Configuration;
+using AdventOfCode.Solutions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,7 +18,7 @@ internal static class DiContainer
         services.AddTransient<InputDataFetcher>();
         services.AddSingleton<PuzzleSolver>();
 
-        services.AddSingleton(context.Configuration.GetSection("AuthorizationConfiguration").Get<AuthorizationConfiguration>());
+        services.AddSingleton(context.Configuration.GetSection("InputDataConfiguration").Get<InputDataConfiguration>());
         services.AddSingleton(context.Configuration.GetSection("CurrentPuzzleInfo").Get<CurrentPuzzleInfo>());
 
         RegisterDaySolutions(services, context.Configuration.GetSection("CurrentPuzzleInfo").Get<CurrentPuzzleInfo>());

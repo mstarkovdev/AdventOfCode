@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AdventOfCode.Configuration;
-internal class AuthorizationConfiguration
+internal class TestCase
 {
-    public required string SessionCookie { get; set; }
+    public string TestData { get; set; }
+
+    public string ExpectedResult { get; set; }
 }

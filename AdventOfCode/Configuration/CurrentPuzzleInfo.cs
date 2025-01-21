@@ -10,4 +10,8 @@ internal class CurrentPuzzleInfo
     public int Year { get; set; }
 
     public int Day { get; set; }
+
+    public TestCase[] FirstPartTestCases { get; set; }
+
+    public TestCase[] SecondPartTestCases { get; set; }
 }

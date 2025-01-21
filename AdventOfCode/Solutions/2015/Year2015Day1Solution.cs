@@ -1,13 +1,6 @@
-﻿using AdventOfCode.Years;
-using Microsoft.Extensions.Logging;
-
-namespace AdventOfCode._2015;
+﻿namespace AdventOfCode.Solutions._2015;
 internal class Year2015Day1Solution : IDaySolution
 {
-    public Year2015Day1Solution()
-    {
-    }
-
     public string GetFirstPartAnswer(string inputData)
     {
         return (inputData.Count(ch => ch == '(') - inputData.Count(ch => ch == ')')).ToString();

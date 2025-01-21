@@ -1,15 +1,12 @@
-﻿using AdventOfCode.Years;
+﻿using AdventOfCode.Solutions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace AdventOfCode
 {
     internal class Program
     {
-        private static ILogger<Program> _logger;
-
         static async Task Main(string[] args)
         {
             var hostBuilder = Host.CreateDefaultBuilder(args);

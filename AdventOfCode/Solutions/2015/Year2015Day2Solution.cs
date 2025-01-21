@@ -1,12 +1,6 @@
-﻿using AdventOfCode.Years;
-
-namespace AdventOfCode._2015;
+﻿namespace AdventOfCode.Solutions._2015;
 internal class Year2015Day2Solution : IDaySolution
 {
-    public Year2015Day2Solution()
-    {
-    }
-
     public string GetFirstPartAnswer(string inputData)
     {
         var boxDimensions = inputData.Split('\n', StringSplitOptions.RemoveEmptyEntries);
