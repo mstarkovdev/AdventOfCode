@@ -60,7 +60,6 @@ internal class Year2015Day3Solution : IDaySolution
                 currentSantaYCoord = roboSantaYCoord;
             }
 
-
             var currentSantaCoords = $"{currentSantaXCoord},{currentSantaYCoord}";
 
             visitsByCoord.TryAdd(currentSantaCoords, 0);
