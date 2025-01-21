@@ -50,7 +50,7 @@ internal class PuzzleSolver
                 var testSolution = getAnswer(testCase.TestData);
                 if (testSolution != testCase.ExpectedResult)
                 {
-                    _logger.LogError("Test case failed. Input data: {0}, expected result: {1}, actual result: {2}",
+                    _logger.LogError("Test case failed. Input data: {0}, expected result: \u001b[34;1m{1}\u001b[33;1m, actual result: \u001b[31m{2}",
                         testCase.TestData, testCase.ExpectedResult, testSolution);
                     return;
                 }
@@ -62,6 +62,6 @@ internal class PuzzleSolver
         var inputData = await _inputDataFetcher.FetchAsync(_currentPuzzleInfo.Year, _currentPuzzleInfo.Day);
         var solution = getAnswer(inputData);
 
-        _logger.LogInformation("Solution to the part {0} is {1}", partNumber, solution);
+        _logger.LogInformation("Solution to the part {0} is \u001b[34;1m{1}", partNumber, solution);
     }
 }
