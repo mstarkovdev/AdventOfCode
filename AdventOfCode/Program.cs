@@ -18,8 +18,6 @@ namespace AdventOfCode
             var solver = host.Services.GetService<PuzzleSolver>();
             await solver.SolveFirstPartAsync();
             await solver.SolveSecondPartAsync();
-
-            host.Run();
         }
 
         private static void ConfigureApplication(HostBuilderContext context, IConfigurationBuilder builder)
