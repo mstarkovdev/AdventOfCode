@@ -9,6 +9,8 @@ internal class PuzzleSolver
     private readonly IDaySolution _daySolution;
     private readonly CurrentPuzzleInfo _currentPuzzleInfo;
 
+    private const string TEST_CASE_DATA_FILE_NAME = "test_case_data.txt";
+
     public PuzzleSolver(ILogger<PuzzleSolver> logger, InputDataFetcher inputDataFetcher,
         IDaySolution daySolution, CurrentPuzzleInfo currentPuzzleInfo)
     {
@@ -41,17 +43,33 @@ internal class PuzzleSolver
             return;
         }
 
-        if (testCases != null && testCases.Any(testCase => !string.IsNullOrEmpty(testCase.TestData)))
+        if (testCases != null && testCases.Any(testCase => 
+            !string.IsNullOrEmpty(testCase.TestData) || testCase.GetTestDataFromFile))
         {
             _logger.LogInformation("Running test cases");
 
             foreach (var testCase in testCases)
             {
-                var testSolution = getAnswer(testCase.TestData);
+                var testData = string.Empty;
+                if (!string.IsNullOrEmpty(testCase.TestData))
+                {
+                    testData = testCase.TestData;
+                }
+                else if (testCase.GetTestDataFromFile)
+                {
+                    testData = File.ReadAllText(TEST_CASE_DATA_FILE_NAME);
+                }
+
+                if (string.IsNullOrEmpty(testData))
+                {
+                    continue;
+                }
+
+                var testSolution = getAnswer(testData);
                 if (testSolution != testCase.ExpectedResult)
                 {
                     _logger.LogError("Test case failed. Input data: {0}, expected result: \u001b[34;1m{1}\u001b[33;1m, actual result: \u001b[31m{2}",
-                        testCase.TestData, testCase.ExpectedResult, testSolution);
+                        testData, testCase.ExpectedResult, testSolution);
                     return;
                 }
             }

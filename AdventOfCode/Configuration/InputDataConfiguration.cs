@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AdventOfCode.Configuration;
 internal class InputDataConfiguration
 {
-    public required string AuthroizationSessionCookie { get; set; }
+    public required string AuthorizationSessionCookie { get; set; }
 
     public required string PathToInputDataFiles { get; set; }
 }

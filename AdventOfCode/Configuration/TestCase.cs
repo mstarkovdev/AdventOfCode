@@ -9,5 +9,7 @@ internal class TestCase
 {
     public string TestData { get; set; }
 
+    public bool GetTestDataFromFile { get; set; }
+
     public string ExpectedResult { get; set; }
 }

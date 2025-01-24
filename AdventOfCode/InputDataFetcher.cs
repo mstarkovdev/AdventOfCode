@@ -51,7 +51,7 @@ internal class InputDataFetcher
 
         using (var httpClient = new HttpClient())
         {
-            httpClient.DefaultRequestHeaders.Add("Cookie", $"session={_inputDataConfiguration.AuthroizationSessionCookie}");
+            httpClient.DefaultRequestHeaders.Add("Cookie", $"session={_inputDataConfiguration.AuthorizationSessionCookie}");
 
             try
             {
