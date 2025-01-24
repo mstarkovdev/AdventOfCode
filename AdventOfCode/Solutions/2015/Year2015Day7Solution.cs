@@ -5,7 +5,7 @@ internal class Year2015Day7Solution : IDaySolution
 {
     public string GetFirstPartAnswer(string inputData)
     {
-        var instructions = inputData.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        var instructions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         var wiresByName = FillWireDictionary(instructions);
 
         return wiresByName["a"].GetSignal().ToString();
@@ -13,7 +13,7 @@ internal class Year2015Day7Solution : IDaySolution
 
     public string GetSecondPartAnswer(string inputData)
     {
-        var instructions = inputData.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        var instructions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         var wiresByName = FillWireDictionary(instructions);
 
         var signalWireA = wiresByName["a"].GetSignal();

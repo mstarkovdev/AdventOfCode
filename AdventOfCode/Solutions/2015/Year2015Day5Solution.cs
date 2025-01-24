@@ -5,7 +5,7 @@ internal class Year2015Day5Solution : IDaySolution
     {
         var niceStringCount = 0;
 
-        var strings = inputData.Split("\n");
+        var strings = inputData.Split(Environment.NewLine);
         foreach (var str in strings)
         {
             if (CheckIfStringIsNiceP1(str))
@@ -21,7 +21,7 @@ internal class Year2015Day5Solution : IDaySolution
     {
         var niceStringCount = 0;
 
-        var strings = inputData.Split("\n");
+        var strings = inputData.Split(Environment.NewLine);
         foreach (var str in strings)
         {
             if (CheckIfStringIsNiceP2(str))

@@ -6,7 +6,7 @@ internal class Year2015Day6Solution : IDaySolution
     public string GetFirstPartAnswer(string inputData)
     {
         var grid = new bool[1000, 1000];
-        var instructions = inputData.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        var instructions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var instruction in instructions)
         {
@@ -53,7 +53,7 @@ internal class Year2015Day6Solution : IDaySolution
     public string GetSecondPartAnswer(string inputData)
     {
         var grid = new int[1000, 1000];
-        var instructions = inputData.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        var instructions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var instruction in instructions)
         {

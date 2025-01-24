@@ -58,10 +58,10 @@ internal class InputDataFetcher
                 var response = await httpClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
-                var inputData = await response.Content.ReadAsStringAsync();
+                var inputData = (await response.Content.ReadAsStringAsync()).ReplaceLineEndings("\r\n").Trim();
                 _logger.LogInformation("Input data fetched successfully");
 
-                File.WriteAllText(pathToYearDayInputDataFile, inputData.Trim());
+                File.WriteAllText(pathToYearDayInputDataFile, inputData);
 
                 return inputData;
             }

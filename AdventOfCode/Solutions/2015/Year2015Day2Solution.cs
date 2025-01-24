@@ -3,7 +3,7 @@ internal class Year2015Day2Solution : IDaySolution
 {
     public string GetFirstPartAnswer(string inputData)
     {
-        var boxDimensions = inputData.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        var boxDimensions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         var totalSquareFeet = 0;
 
         foreach (var boxDimension in boxDimensions)
@@ -25,7 +25,7 @@ internal class Year2015Day2Solution : IDaySolution
 
     public string GetSecondPartAnswer(string inputData)
     {
-        var boxDimensions = inputData.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        var boxDimensions = inputData.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
         var totalRibbonFeet = 0;
 
         foreach (var boxDimension in boxDimensions)
