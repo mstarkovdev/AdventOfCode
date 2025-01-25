@@ -1,5 +1,6 @@
 ﻿using AdventOfCode.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace AdventOfCode.Solutions;
 internal class PuzzleSolver
@@ -37,7 +38,7 @@ internal class PuzzleSolver
         _logger.LogInformation("Solving part {0} of the puzzle", partNumber);
 
         var methodInfo = getAnswer.Method;
-        if (methodInfo.GetCustomAttributes(typeof(NotImplementedAttribute), false).Length > 0)
+        if (methodInfo.GetCustomAttribute<NotImplementedAttribute>() != null)
         {
             _logger.LogInformation("Part {0} not yet implemented", partNumber);
             return;
